@@ -16,7 +16,7 @@ const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault()
         try {
-            const res = await axios.post('/api/auth/login', form, {
+            const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/login`, form, {
                 withCredentials: true,
             })
             setAuth({

@@ -32,7 +32,7 @@ const AdminDashboard = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`/api/users/${id}`, {
+            await axios.delete(`${import.meta.env.VITE_API_URL}/api/users/${id}`, {
                 headers: {
                     Authorization: `Bearer ${auth.accessToken}`
                 }, withCredentials: true,

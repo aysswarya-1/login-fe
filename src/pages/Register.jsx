@@ -16,7 +16,7 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            await axios.post("/api/auth/register", form, {
+            await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/register`, form, {
                 withCredentials: true
             })
             navigate('/login')

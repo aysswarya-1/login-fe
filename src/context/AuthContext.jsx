@@ -10,9 +10,11 @@ export const AuthProvider = ({ children }) => {
     useEffect(() => {
         const checkAuth = async () => {
             try {
-                const res = await axios.get("/api/auth/refresh", {
-                    withCredentials: true
-                })
+                const res = await axios
+                    .get(`${import.meta.env.VITE_API_URL}/api/auth/refresh`,
+                        {
+                            withCredentials: true
+                        })
                 setAuth({
                     accessToken: res.data.accessToken,
                     role: res.data.user.role,

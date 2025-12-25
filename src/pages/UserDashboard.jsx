@@ -11,7 +11,7 @@ const UserDashboard = () => {
         const fetchProfile = async () => {
             if (!auth?.accessToken) return;
             try {
-                const res = await axios.get("/api/users/me", {
+                const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/users/me`, {
                     headers: {
                         Authorization: `Bearer ${auth?.accessToken}`
                     }, withCredentials: true
