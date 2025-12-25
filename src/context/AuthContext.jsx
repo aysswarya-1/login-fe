@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react"
 import axios from "axios"
 
 const AuthContext = createContext()
-
+console.log(`${import.meta.env.VITE_API_URL}/api/auth/refresh`)
 export const AuthProvider = ({ children }) => {
     const [auth, setAuth] = useState(null);
     const [loading, setLoading] = useState(true);
